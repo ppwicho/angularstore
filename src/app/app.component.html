@@ -3,8 +3,16 @@
 
 <div *ngIf="title === 'ppwicho'"> Este es un div </div>
 
+<button (click)=addItem()>Add Item</button>
+
 <ul>
-  <li *ngFor="let name of items">
-    {{name}}
+  <li *ngIf="items.length === 0">La lista esta vacia</li>
+  <li *ngFor="let name of items; index as i">
+    {{name}} {{i}} <button (click)=deleteItem(i)>Borrar</button>
   </li>
 </ul>
+
+<div *ngFor="let product of products">
+  {{product.title}}
+  <img [src]="product.image" alt=""> 
+</div>

@@ -114,5 +114,21 @@ En nuestro HTML iteramos con \*ngFor
   </li>
 </ul>
 ```
+Para gregar una acción en nuestro HTML utilizamos () 
+
+Las acciones son diversas y llaman funciones
+
+`(click) = addItem() `
+
+En nuestro TS Components agregamos la función addItem() con `this.items.push` 
 
 
+Para recorrer objetos con ngFor, notar que para cambiar un atributo del HTML con Angular lo envolvemos con llaves []: 
+
+```
+<div *ngFor="let product of products">
+  {{product.title}}
+  <img [src]="product.image" alt=""> 
+</div>
+
+```
