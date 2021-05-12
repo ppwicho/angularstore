@@ -6,7 +6,7 @@ import {Product} from './products.model';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
-  title = 'platzi-store';
+  title = 'ppwicho';
   items = ['🍎', '🍏', '🍇', '🍌', '🍑'];
   objeto = {};
   products : Product[] = [

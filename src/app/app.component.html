@@ -1,7 +1,20 @@
 <input type="text" [(ngModel)]="title">
 {{title}}
 
-<div *ngIf="title === 'ppwicho'"> Este es un div </div>
+<div *ngIf="title === 'ppwicho'"> Este es {{title}} </div>
+
+<div *ngIf="title === 'tray'"> Este es {{title}} </div>
+
+<div *ngIf="title === 'gaby'"> Este es {{title}}  </div>
+
+<div [ngSwitch]="title">
+  <p *ngSwitchDefault> No hay match</p>
+  <p *ngSwitchCase="'tray'">este es {{title}}</p>
+  <p *ngSwitchCase="'ppwicho'">este es {{title}}</p>
+  <p *ngSwitchCase="'gaby'">este es {{title}}</p>
+</div>
+
+
 
 <button (click)=addItem()>Add Item</button>
 

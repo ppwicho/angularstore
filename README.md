@@ -141,3 +141,16 @@ Para poder utilizar el molde utilizamos la palabra clave "export"
 
 `export interface Product{}`
 
+## ngswitch 
+
+Podemos anidar varios ngIf 
+
+```
+<div [ngSwitch]="title">
+  <p *ngSwitchDefault> No hay match</p>
+  <p *ngSwitchCase="'tray'">este es {{title}}</p>
+  <p *ngSwitchCase="'ppwicho'">este es {{title}}</p>
+  <p *ngSwitchCase="'gaby'">este es {{title}}</p>
+</div>
+
+```
