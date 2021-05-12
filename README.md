@@ -154,3 +154,52 @@ Podemos anidar varios ngIf
 </div>
 
 ```
+
+# Componentes y Decoradores 
+
+Los usamos para abstraer la aplicación. 
+
+### Definir componente 
+
+```
+//Necesitamos los decoradores para darle un contexto para saber que tipo de rol va a cumplir 
+// Los decoradores vienen del core de @angular
+
+import { Component } from '@angular/core'; 
+
+// Los decoradores se utilizan antes de la clase con @Component
+// Los componentes tienen metadata 
+
+@Component({
+    selector:'app-product', 
+    templateUrl: './product.component.html' // referencia al HTML
+}) 
+export class ProductComponent{
+
+}
+
+```
+
+Creamos el archivo HTML 
+
+#### En el MODULO app.module.ts 
+
+Importamos el componente `import {ProductComponent} from './components/product.component';` 
+
+Y necesitamos declararlo dentro de las declarations: 
+
+```
+@NgModule({
+  declarations: [
+    AppComponent,
+    ProductComponent 
+  ],
+
+```
+
+Ahora podemos usar `<app-component></app-component>` como un tag de HTML dentro de app.component.html 
+
+
+
+
+
