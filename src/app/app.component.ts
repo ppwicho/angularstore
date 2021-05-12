@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import {Product} from './products.model';
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
@@ -7,8 +8,8 @@ import { Component } from '@angular/core';
 export class AppComponent {
   title = 'platzi-store';
   items = ['🍎', '🍏', '🍇', '🍌', '🍑'];
-
-  products = [
+  objeto = {};
+  products : Product[] = [
     {
       id: '1',
       image: 'assets/images/camiseta.png',

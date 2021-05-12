@@ -132,3 +132,12 @@ Para recorrer objetos con ngFor, notar que para cambiar un atributo del HTML con
 </div>
 
 ```
+
+## Para "tipear" 
+
+Creamos una libreria con nombre product.models.ts dentro de src/app. 
+
+Para poder utilizar el molde utilizamos la palabra clave "export"
+
+`export interface Product{}`
+
