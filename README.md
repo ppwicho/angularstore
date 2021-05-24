@@ -251,6 +251,15 @@ import { Component, Input ,Output, EventEmitter} from '@angular/core';
 
 ```
 
+Y en el elemento padre en app.component.html lo rescatamos con (): 
+
+```
+<div *ngFor="let product of products">
+  <app-product (productClicked)="clickProduct($event)" [product]="product"></app-product>
+</div>
+```
+
+
 
 
 
