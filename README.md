@@ -199,6 +199,66 @@ Y necesitamos declararlo dentro de las declarations:
 
 Ahora podemos usar `<app-component></app-component>` como un tag de HTML dentro de app.component.html 
 
+# Input y Outputs
+## Property binding (enviamos datos) y Event Binding (Recibibos datos)
+
+En nuestro Componente Producto: 
+
+### Input
+
+En app.component.ts  importamos del Angular/core input 
+
+`import { Component, Input} from '@angular/core'; `
+
+Ahora nuestro app.component.html procesa la iteración sobre un componente 
+ 
+``` 
+<div *ngFor="let product of products">
+  <app-product [product]="product"></app-product>
+</div> 
+
+``` 
+
+utilizando el @Input de product.componnet.ts 
+
+`@Input() product:Product;`
+
+
+
+### Output
+
+Es la manera de comunicar eventos a nuestros componentes, vamos a colar un botón a cada uno de los productos de agregar al carrito. 
+
+El metodo será addCart() en  product.componnet.ts
+
+El product.componnent.html 
+
+` <button (click)="addCart()">Agregar al carrito</button>`.
+
+Si quisieramos saber desde el app.component que le dieron click importamos Output y EventEmitter 
+
+```
+import { Component, Input ,Output, EventEmitter} from '@angular/core'; 
+
+...
+
+    @Output() productClicked: EventEmitter<any> = new EventEmitter();
+
+    addCart(){
+        console.log('añadir al carrito');
+        this.productClicked.emit(this.product.id)
+    }
+
+```
+
+
+
+
+
+
+
+
+
 
 
 
