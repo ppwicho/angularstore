@@ -259,7 +259,18 @@ Y en el elemento padre en app.component.html lo rescatamos con ():
 </div>
 ```
 
+Creamos el metodo que lo lee en el componente padre app.component.ts que se llamará clickProduct(id:number) 
 
+Angular nos da el método $event que arroja el resultado que viene del emiter desde product.component.ts 
+
+```
+
+    addCart(){
+        console.log('añadir al carrito');
+        this.productClicked.emit(this.product.id)
+    }
+
+```
 
 
 
