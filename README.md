@@ -297,10 +297,21 @@ ngOnChanges(){} // import OnChanges y sobre la class implements OnChnages{}
 
 ```
 
+# Estilos CSS en Componentes de Angular 
 
+Dentro de product.components.ts le indicamos el ARRAY de styleUrls para este componente 
 
+```
+@Component({
+    selector:'app-product',
+    templateUrl: './product.component.html',
+    styleUrls: ['./product.component.scss'],
+}) 
+```
 
+Los estilos se aplican únicamente a lo que viva dentro de este HTML del componente. 
 
+Los estilos globales se encuentran en styles.scss
 
 
 
