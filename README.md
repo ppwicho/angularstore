@@ -313,6 +313,24 @@ Los estilos se aplican únicamente a lo que viva dentro de este HTML del compone
 
 Los estilos globales se encuentran en styles.scss
 
+# ng generate y ng lint 
+
+## ng g
+
+Nos permite ahorrar tiempo para generar los archivos de angular ts, css, html etc. 
+
+`ng g c cart`
+
+Nos genera scss,html, spec.ts y el ts. Además nos agrega a app.module.ts el componente. 
+
+## ng lint 
+
+Nos permite detectar errores y mejores prácticas en el proyecto, muy similar a lo que nos regresa un editor de código moderno, pero desde consola. 
+
+`ng lint`
+
+
+
 
 
 
