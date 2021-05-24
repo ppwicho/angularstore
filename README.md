@@ -313,6 +313,8 @@ Los estilos se aplican únicamente a lo que viva dentro de este HTML del compone
 
 Los estilos globales se encuentran en styles.scss
 
+Curso de CSS Grid: https://platzi.com/clases/css-grid-layout/
+
 # ng generate y ng lint 
 
 ## ng g
@@ -328,6 +330,9 @@ Nos genera scss,html, spec.ts y el ts. Además nos agrega a app.module.ts el com
 Nos permite detectar errores y mejores prácticas en el proyecto, muy similar a lo que nos regresa un editor de código moderno, pero desde consola. 
 
 `ng lint`
+
+
+# Pipes y Directivas en Angular 
 
 
 
