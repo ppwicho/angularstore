@@ -200,6 +200,9 @@ Y necesitamos declararlo dentro de las declarations:
 Ahora podemos usar `<app-component></app-component>` como un tag de HTML dentro de app.component.html 
 
 # Input y Outputs
+
+Nos ayudan a abstraer la aplicación y enviar datos desde nuestros componentes hijos hacia nuestros componentes padres. 
+
 ## Property binding (enviamos datos) y Event Binding (Recibibos datos)
 
 En nuestro Componente Producto: 
@@ -271,6 +274,29 @@ Angular nos da el método $event que arroja el resultado que viene del emiter de
     }
 
 ```
+
+## Ciclo de vida de los componentes 
+
+El orden de ejecución es: 
+
+- constructor : Crearmos constructor y ponemos en interfaz.
+- ngOnChanges : Detecta el cambio cada que tenemos un input, cada que cambiamos la data podemos ver el estado anterior y el estado nuevo. 
+- ngOnInit :  Solo se ejecuta una vez cuando esta listo en interfaz gráfica (Buena idea llamar aquí a un API)
+- ngDoCheck : Detecta cuando los componentes hijos están listos en interfaz. 
+-- ngAfterContentinit
+-- ngAfterContentChecked
+-- ngAfterViewInit
+-- ngAfterViewChecked 
+- ngOnDestroy : Cuando quitamos el elemento de interfaz. 
+
+Los constructores están definidos en: 
+
+``` 
+constructor() { } 
+ngOnChanges(){} // import OnChanges y sobre la class implements OnChnages{}
+
+```
+
 
 
 
