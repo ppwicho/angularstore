@@ -1,8 +1,7 @@
 # PlatziStore
 
-Este proyecto es parte de un curso de Angular, utilizo el Readme como mis notas del curso y las comparto en Github. 
+Este proyecto es parte de un curso de Angular, utilizo el Readme como mis notas del curso y las comparto publicamente en Github. 
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 11.2.12.
 
 ## Development server
 
@@ -109,7 +108,7 @@ En nuestro componente TypeScript definimos en nuestra clase AppComponent el arra
 
 En nuestro HTML iteramos con \*ngFor 
 
-```
+```HTML
 <ul>
   <li *ngFor="let name of items">
     {{name}}
@@ -127,7 +126,7 @@ En nuestro TS Components agregamos la función addItem() con `this.items.push`
 
 Para recorrer objetos con ngFor, notar que para cambiar un atributo del HTML con Angular lo envolvemos con llaves []: 
 
-```
+```HTML
 <div *ngFor="let product of products">
   {{product.title}}
   <img [src]="product.image" alt=""> 
@@ -406,6 +405,58 @@ En el HTML del producto podemos llamar a esta directiva
 No es buena práctica manipular el DOM para eso tenemos el Data Binding de Angular. No obstante es útil para modificar el DOM dinámicamente en casos como autocompletado o marcar errores. 
 
 
+# Módulos y Rutas 
+
+Nos permite abstraer la aplicación y no utilizar app.module para todo. 
+
+Los módulos core y share son de Angular, utilizan los principios de abstacción. 
+
+- Core:   Componentes singleton (login etc). 
+- Share:  Podemos tener componentes compartidos 
+
+## Módulos
+
+
+## Rutas 
+
+Nos sirven para mostrar por diferentes URI el contenido. 
+
+El módulo `app.routing.module` contiene las rutas. 
+
+Creamos componentes para las rutas del app: 
+
+```bash
+ng g c contact
+ng g c product
+ng g c home
+```
+
+```TypeScript @/app-routing.module.ts
+import {HomeComponent} from './home/home.component'
+import {ProductsComponent} from './products/products.component'
+import {ContactComponent} from './contact/contact.component'
+const routes: Routes = [
+  {
+    path: 'home',
+    component: HomeComponent
+  },
+  {
+    path:'products',
+    component:ProductsComponent
+  },
+  {
+    path:'contact',
+    component: ContactComponent
+  },
+
+];
+```
+
+Para que se rendericen las rutas: 
+
+En `app.component.html` tenemos que cargar el componente con `<router-outlet/>`
+
+Ahora ya podemos vistar las rutas http://localhost:4200/home
 
 
 
