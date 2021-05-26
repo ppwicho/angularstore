@@ -459,8 +459,68 @@ En `app.component.html` tenemos que cargar el componente con `<router-outlet/>`
 Ahora ya podemos vistar las rutas http://localhost:4200/home
 
 
+Como ya hemos limpiado app.component.html podemos en lugar de templateUrl usar template y unicamente router-outlet.
+
+```TypeScript 
+import { Component } from '@angular/core';
+@Component({
+  selector: 'app-root',
+  template: '<router-outlet></router-outlet>',
+  styleUrls: ['./app.component.scss']
+})
+export class AppComponent {
+
+}
+```
+
+# Librerias 
+
+Agregamos a nuestro proyecto el componente banner, utilizaremos swiper como libreria 
+
+` npm install swiper --save `
+
+## Librerias funcional 
 
 
+
+## Libreria con estilos 
+
+La librería cuenta con su CSS en  `node-modules/swiper/dist/css/swiper.min.css`  
+
+En angular.json de nuestro poryecto agregamos al array la ruta del css. 
+
+Se deben agregar los componentes y referencias al app.module.ts 
+# routerLink y routerLinkActive
+## routerLink
+
+En lugar de ocupar `href` en HTML angular nos brinda el comando `routerLink` para no hacer refresh de la página en cada click. 
+
+```HTML
+<nav>
+    <a routerLink="/products">products</a>
+    <a routerLink="/contact">contact</a>
+</nav>
+```
+
+## routerLinkActive
+
+Nos agrega el estilo indicado cuando la página que hace referencia esta activa. 
+
+```HTML
+<nav>
+    <a routerLink="/home" routerLinkActive="active">Home</a>
+    <a routerLink="/products" routerLinkActive="active">Products</a>
+    <a routerLink="/contact" routerLinkActive="active">Contact</a>
+</nav> 
+```
+### 404 Not Found 
+
+```TypeScript 
+  {
+    path:'**', // ** 
+    component:PageNotFoundComponent
+  }
+```
 
 
 
