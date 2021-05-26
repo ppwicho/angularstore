@@ -1,5 +1,7 @@
 # PlatziStore
 
+Este proyecto es parte de un curso de Angular, utilizo el Readme como mis notas del curso y las comparto en Github. 
+
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 11.2.12.
 
 ## Development server
@@ -145,7 +147,7 @@ Para poder utilizar el molde utilizamos la palabra clave "export"
 
 Podemos anidar varios ngIf 
 
-```
+```HTML
 <div [ngSwitch]="title">
   <p *ngSwitchDefault> No hay match</p>
   <p *ngSwitchCase="'tray'">este es {{title}}</p>
@@ -161,7 +163,7 @@ Los usamos para abstraer la aplicación.
 
 ### Definir componente 
 
-```
+```TypeScript
 //Necesitamos los decoradores para darle un contexto para saber que tipo de rol va a cumplir 
 // Los decoradores vienen del core de @angular
 
@@ -188,7 +190,7 @@ Importamos el componente `import {ProductComponent} from './components/product.c
 
 Y necesitamos declararlo dentro de las declarations: 
 
-```
+```TypeScript
 @NgModule({
   declarations: [
     AppComponent,
@@ -215,7 +217,7 @@ En app.component.ts  importamos del Angular/core input
 
 Ahora nuestro app.component.html procesa la iteración sobre un componente 
  
-``` 
+``` HTML
 <div *ngFor="let product of products">
   <app-product [product]="product"></app-product>
 </div> 
@@ -240,7 +242,7 @@ El product.componnent.html
 
 Si quisieramos saber desde el app.component que le dieron click importamos Output y EventEmitter 
 
-```
+```TypeScript
 import { Component, Input ,Output, EventEmitter} from '@angular/core'; 
 
 ...
@@ -256,7 +258,7 @@ import { Component, Input ,Output, EventEmitter} from '@angular/core';
 
 Y en el elemento padre en app.component.html lo rescatamos con (): 
 
-```
+```HTML
 <div *ngFor="let product of products">
   <app-product (productClicked)="clickProduct($event)" [product]="product"></app-product>
 </div>
@@ -266,7 +268,7 @@ Creamos el metodo que lo lee en el componente padre app.component.ts que se llam
 
 Angular nos da el método $event que arroja el resultado que viene del emiter desde product.component.ts 
 
-```
+```TypeScript
 
     addCart(){
         console.log('añadir al carrito');
@@ -291,7 +293,7 @@ El orden de ejecución es:
 
 Los constructores están definidos en: 
 
-``` 
+``` TypeScript
 constructor() { } 
 ngOnChanges(){} // import OnChanges y sobre la class implements OnChnages{}
 
@@ -301,7 +303,7 @@ ngOnChanges(){} // import OnChanges y sobre la class implements OnChnages{}
 
 Dentro de product.components.ts le indicamos el ARRAY de styleUrls para este componente 
 
-```
+```TypeScript
 @Component({
     selector:'app-product',
     templateUrl: './product.component.html',
@@ -349,7 +351,7 @@ Dentro de exponential.pipe.ts  veremos que el decorador ahora es @Pipe con nombr
 El metodo por defecto será transform que recibe un valor de entrada y retorna una salida.  
 
 
-``` 
+``` TypeScript
 
 import { Pipe, PipeTransform } from '@angular/core';
 
@@ -379,7 +381,7 @@ Nos crea directive.specs.ts (pruebas) y directive.ts en el APP.module.
 
 Ahora en la directiva de highlight podemos modificar el DOM 
 
-```
+```TypeScript
 import { Directive, ElementRef } from '@angular/core';
 
 @Directive({
