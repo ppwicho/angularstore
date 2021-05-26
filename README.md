@@ -334,6 +334,37 @@ Nos permite detectar errores y mejores prácticas en el proyecto, muy similar a 
 
 # Pipes y Directivas en Angular 
 
+Los usamos para ingresar datos y mostrarlos en pantalla con cierto formato. Los pipes de angular por defecto los encontramos en su documentación. 
+
+` <h3>{{ product.title | uppercase }}</h3>`
+
+## Creando un pipe propio 
+
+Se puede generar con el comando ng: 
+
+`ng g p exponential`
+
+Dentro de exponential.pipe.ts  veremos que el decorador ahora es @Pipe con nombre exponential. 
+
+El metodo por defecto será transform que recibe un valor de entrada y retorna una salida.  
+
+
+``` 
+
+import { Pipe, PipeTransform } from '@angular/core';
+
+@Pipe({
+  name: 'exponential'
+})
+export class ExponentialPipe implements PipeTransform {
+
+  transform(value: unknown, ...args: unknown[]): unknown {
+    return null;
+  }
+
+} 
+
+```
 
 
 
