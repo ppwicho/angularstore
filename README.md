@@ -369,7 +369,7 @@ export class ExponentialPipe implements PipeTransform {
 
 Creamos las variables en el TS componente y podemos usar el pipe ahora en el componente HTML. 
 
-# Directivas 
+## Directivas 
 
 Son un artefacto que nos sirven para modificar el DOM de un componente en especifico. 
 
