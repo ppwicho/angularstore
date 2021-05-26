@@ -9,6 +9,7 @@ export class AppComponent {
   title = 'ppwicho';
   items = ['🍎', '🍏', '🍇', '🍌', '🍑'];
   objeto = {};
+  power = 10;
   products : Product[] = [
     {
       id: '1',

@@ -367,6 +367,53 @@ export class ExponentialPipe implements PipeTransform {
 ```
 
 
+Creamos las variables en el TS componente y podemos usar el pipe ahora en el componente HTML. 
+
+# Directivas 
+
+Son un artefacto que nos sirven para modificar el DOM de un componente en especifico. 
+
+`ng g d highlight`
+
+Nos crea directive.specs.ts (pruebas) y directive.ts en el APP.module. 
+
+Ahora en la directiva de highlight podemos modificar el DOM 
+
+```
+import { Directive, ElementRef } from '@angular/core';
+
+@Directive({
+  selector: '[appHighlight]'
+})
+export class HighlightDirective {
+
+  constructor(
+    element:ElementRef // Inyector de dependencias 
+  ) {
+    element.nativeElement.style.backgroundColor='red';
+   }
+
+}
+```
+
+En el HTML del producto podemos llamar a esta directiva 
+
+`<h3 appHighlight>{{ product.title | uppercase }}</h3>`
+
+
+No es buena práctica manipular el DOM para eso tenemos el Data Binding de Angular. No obstante es útil para modificar el DOM dinámicamente en casos como autocompletado o marcar errores. 
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 

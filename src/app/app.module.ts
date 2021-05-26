@@ -6,12 +6,14 @@ import { AppComponent } from './app.component';
 import { FormsModule } from '@angular/forms';
 import {ProductComponent} from './components/product.component';
 import { ExponentialPipe } from './exponential.pipe';
+import { HighlightDirective } from './highlight.directive';
 
 @NgModule({
   declarations: [
     AppComponent,
     ProductComponent,
-    ExponentialPipe
+    ExponentialPipe,
+    HighlightDirective
   ],
   imports: [
     BrowserModule,
