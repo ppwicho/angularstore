@@ -645,3 +645,51 @@ ngOnInit() {
   }
 ```
 
+# Vistas añidadas (Branch 26-vistas-anidadas)
+
+Podemos reutilizar el código con vistas añidadas. En cada componente en su template vemos que todos utilizan header y footer. 
+
+`ng g c layout`
+
+Dentro del layout.component.html cargamos el `<router-outlet></router-outlet>` entre header y footer. 
+
+En el archivo routing se incorpora el componente creado anteriormente en la variable de routes, pero esta vez todos los componentes que se basen en este deberán estar anidadas. Para anidarlos el objeto del componente creado tendrá que tener una nueva característica ‘children’, el cual tendrá los ‘path’ y ‘component’ de las rutas que se basen en la anterior.
+```TypeScript 
+const routes: Routes = [
+    {
+      path: '',
+      component: LayoutComponent,
+      children: [
+        {
+          path: '',
+          redirectTo: '/home',
+          pathMatch: 'full',
+        },
+        {
+          path: 'home',
+          component: HomeComponent
+        },
+        {
+          path: 'products',
+          component: ProductsComponent
+        },
+        {
+          path: 'products/:id',
+          component: ProductDetailComponent
+        },
+        {
+          path: 'contact',
+          component: ContactComponent
+        },
+      ]
+    },
+    {
+      path: 'demo',
+      component: DemoComponent
+    },
+    {
+      path: '**',
+      component: PageNotFoundComponent
+    }
+  ];
+  ``` 
