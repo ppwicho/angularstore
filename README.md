@@ -654,6 +654,7 @@ Podemos reutilizar el código con vistas añidadas. En cada componente en su tem
 Dentro del layout.component.html cargamos el `<router-outlet></router-outlet>` entre header y footer. 
 
 En el archivo routing se incorpora el componente creado anteriormente en la variable de routes, pero esta vez todos los componentes que se basen en este deberán estar anidadas. Para anidarlos el objeto del componente creado tendrá que tener una nueva característica ‘children’, el cual tendrá los ‘path’ y ‘component’ de las rutas que se basen en la anterior.
+
 ```TypeScript 
 const routes: Routes = [
     {
@@ -693,3 +694,44 @@ const routes: Routes = [
     }
   ];
   ``` 
+
+  ## Lazy Loading 
+  ### branch 22-lazy-loading
+
+  Nos ayuda a reducir el peso de las aplicaciones para que carguen más rápido. 
+
+  Los archivos JavaScript pasan por los siguientes pasos en el navegador: 
+
+  - Download 
+  - Parse
+  - Compile 
+  - Execute 
+
+  Para lo que tenemos que darle modularidad a la aplicación. 
+
+  Básicamente un módulo podemos compararlo con un `app-module`  y un `app-routing`
+
+### PreloadStrategy  (Slow 3G Networks)
+
+Cuando queremos que la aplicación pre cargue los componentes no necesarios de la aplicación modular cuando este listo el navegador, podemos usar una estratégia en `app-routing.module.ts`
+
+```TypeScript
+import { Routes, RouterModule, PreloadAllModules } from '@angular/router';
+```
+
+```TypeScript
+@NgModule({
+  imports: [RouterModule.forRoot(routes, {
+    preloadingStrategy: PreloadAllModules, // Para redes 3G lentas
+  })],
+  exports: [RouterModule]
+})
+```
+
+## Shared Module 
+
+Existen elementos compartidos, como el header y footer. 
+
+Para crear un módulo podemos hacerlo con el comando rápido:
+
+`ng g m shared`
