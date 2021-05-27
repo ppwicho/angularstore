@@ -528,6 +528,8 @@ Los servicios proveen datos esencialmente. La forma de crear un servicio es en l
 .
 Por lo general tenemos 2 métodos esenciales en los servicios, uno para obtener todos los objetos guardados en una variable, y otro para obtener 1 objeto especifico.
 
+El decorador de los Servicios es `@Injectable` 
+
 
 ```TypeScript 
 export class someService {
