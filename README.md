@@ -728,10 +728,30 @@ import { Routes, RouterModule, PreloadAllModules } from '@angular/router';
 })
 ```
 
-## Shared Module 
+## Shared y Core Module 
+### 30-core-share 
 
 Existen elementos compartidos, como el header y footer. 
 
 Para crear un módulo podemos hacerlo con el comando rápido:
 
 `ng g m shared`
+
+De esta manera tendremos un archivo shared.module.ts que tendrá la importación del NGCORE. 
+
+Movemos a shared/components footer y header del proyecto en el branch. Movemos a shared/pipes el pipe exponential. 
+
+## Shared Module
+
+Módulo compartido, donde se guardan componentes, directivas y pipes, en la cual se necesita importarlo en los otros módulos que seran utilizados.
+
+DATO: Es una buena práctica en el “share module” guardar componentes, directivas y pipes o como tal todas las cuestiones de artefactos graficos.
+.
+## Core Module
+Segmenta o agrupa componentes y servicios, si o solo si se van a compartir a traves de toda la aplicación pero solo generando una referencia única. Es decir por defecto va estar en todos los módulos sin necesidad de importarlos.
+
+DATO: Es una buena práctica en el “core module” guardar solo servicios que tengan una sola
+referencia de los datos.
+DATOS_2: El modulo Core sigue el patrón Singleton.
+Variable global, una única instancia.
+
