@@ -31,6 +31,10 @@ To get more help on the Angular CLI use `ng help` or go check out the [Angular C
 
 Contiene las configuraciones de construcción y configuración. 
 
+Para compilar las dependencias corremos: 
+
+`npm install --save-dev @angular-devkit/build-angular`
+
 ## src (Source)
 
 Es donde tenemos la aplicación, los CSS, etc.  Es donde desarrollamos. 
