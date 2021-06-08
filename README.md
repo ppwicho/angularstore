@@ -766,7 +766,7 @@ CanActivate - Muestra o no una ruta.
 
 El return de canActivate se obtiene de un servicio de auth y puede ser true/false. 
 
-Para activar el guardian sobre el routing-module en particular, en routes importamos el guardian y utlizamos la sentencia `canActivate: []` 
+Para activar el guardian sobre el routing-module en particular, en routes importamos el guardian y utlizamos la sentencia `canActivate: [AdminGuard]` 
 
 ```TypeScript
       {
