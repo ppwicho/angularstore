@@ -739,3 +739,40 @@ Existen elementos compartidos, como el header y footer.
 Para crear un módulo podemos hacerlo con el comando rápido:
 
 `ng g m shared`
+
+Dentro de este shared module metemos todos los elementos compartidos. 
+
+Dentro de este share module, tenemos que especificar que modulos son exportables. 
+
+No olvidar importar el RouterModule para tener routerlink.  Y CommonModule para tener NgFor, NgIf.
+
+## Core Module 
+
+Segmenta o agrupa componentes solo y solo sí se van a compartir en toda la aplicación pero solo generando una referencia única. 
+
+`ng g m core`
+
+Al diferencia de Share Module, Core Module siempre va a estar presente sin necesidad de importarla, nos sirve para guardar sevicios de datos. 
+
+
+
+# Guardianes 
+
+Los usamos para proteger las aplicaciones en Angular. 
+
+`ng g g admin`
+
+CanActivate - Muestra o no una ruta. 
+
+El return de canActivate se obtiene de un servicio de auth y puede ser true/false. 
+
+Para activar el guardian sobre el routing-module en particular, en routes importamos el guardian y utlizamos la sentencia `canActivate: []` 
+
+```TypeScript
+      {
+        path:'contact',
+        canActivate: [AdminGuard],
+        component: ContactComponent
+      },
+```
+
