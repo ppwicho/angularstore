@@ -4,7 +4,6 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { FormsModule } from '@angular/forms';
 
-import { ContactComponent } from './contact/contact.component';
 
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
 import { ProductDetailComponent } from './product-detail/product-detail.component';
@@ -15,9 +14,6 @@ import { CoreModule } from './core/core.module'
 @NgModule({
   declarations: [
     AppComponent,
-
-    ContactComponent,
-
     PageNotFoundComponent,
     ProductDetailComponent,
     LayoutComponent
