@@ -3,9 +3,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { FormsModule } from '@angular/forms';
-import {ProductComponent} from './product/product.component';
 
-import { ProductsComponent } from './products/products.component';
 import { ContactComponent } from './contact/contact.component';
 
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
@@ -17,9 +15,7 @@ import { CoreModule } from './core/core.module'
 @NgModule({
   declarations: [
     AppComponent,
-    ProductComponent,
 
-    ProductsComponent,
     ContactComponent,
 
     PageNotFoundComponent,
