@@ -785,3 +785,30 @@ Es buena prácticas crear un componente dentro de share modules para instalar ma
 `ng g m material`
 
 
+# FlexBox Grid
+
+Una vez instalado con node 
+
+`npm i flexboxgrid --save`
+
+Agregamos los CSS al Angular.json
+
+```TypeScript
+           "styles": [
+              "./node_modules/@angular/material/prebuilt-themes/indigo-pink.css",
+              "./node_modules/flexboxgrid/dist/flexboxgrid.min.css",
+              "src/styles.scss"
+            ],
+```
+
+Se recompila. 
+
+En la documentación de flexbox podemos ver cuales son las clases CSS que podemos ocupar. 
+
+http://flexboxgrid.com/
+
+
+# Menu con Angular 
+
+Podemos encontrar los iconos soportados por Angular en https://material.io/resources 
+
