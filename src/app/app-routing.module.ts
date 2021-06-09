@@ -1,7 +1,6 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes , PreloadAllModules } from '@angular/router';
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
-import {ProductDetailComponent} from './product-detail/product-detail.component'
 import {LayoutComponent} from './layout/layout.component'
 import { AdminGuard } from './admin.guard'
 
@@ -26,10 +25,10 @@ const routes: Routes = [
         //component:ProductsComponent
         loadChildren: () => import('./products/products.module').then(m=>m.ProductsModule)  
       },
-      {
-        path:'products/:id',
-        component: ProductDetailComponent
-      },
+      //{
+      //  path:'products/:id',
+      //  loadChildren: () => import('./products/products.module').then(m=>m.ProductsModule) 
+      //},
       {
         path:'contact',
         canActivate: [AdminGuard],
