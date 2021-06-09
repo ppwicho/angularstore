@@ -776,3 +776,12 @@ Para activar el guardian sobre el routing-module en particular, en routes import
       },
 ```
 
+# Angular/Material
+
+`ng add @angular/material`
+
+Es buena prácticas crear un componente dentro de share modules para instalar material. 
+
+`ng g m material`
+
+
