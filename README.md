@@ -840,7 +840,30 @@ Creamos el modulo, las rutas, y ahora podemos visitar el schematic:
 http://localhost:4200/admin/create
 
 
+# HTTP Module
+
+Para traer la información desde los servicios REST API utilizamos el `import { HttpClientModule } from '@angular/common/http'  `, lo invocamos en nuestro `app.module.ts` para que este disponible en todo el proyecto. 
+
+Para poder utilzarlo en nuestros servicios, tenemos que incorporar el cliente para hacer peticiiones 
+
+En product.service.ts `import { HttpClient } from '@angular/common/http';`
+
+Inyectamos la dependencia 
+
+```TS
+constructor 
+private http: HttpClient
+```
+
+Para este proyecto traeremos la información del API test disponible en 
 
 
+https://platzi-store.herokuapp.com/products/4
 
+## Variables de ambiente 
 
+Se utilizan para guardar variables que pueden ser modificadas con el tiempo o que son una constante. 
+
+Tenemos en la carpeta de environments dos archivos, uno de producción y otro de desarrollo. 
+
+Aqui guardaremos la URL del API 

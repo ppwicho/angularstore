@@ -24,9 +24,19 @@ export class ProductDetailComponent implements OnInit {
       
       const id = params.id;
       console.log(id);
-      this.product=this.productService.getProduct(id);
+      this.fetchProduct(id);
+      //this.product=this.productService.getProduct(id);
 
     });
+  }
+
+  fetchProduct(id: string){
+    this.productService.getProduct(id)
+    .subscribe(product => {
+      console.log(product);
+      this.product=product;
+    })
+
   }
 
 }
