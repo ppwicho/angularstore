@@ -814,5 +814,33 @@ Podemos encontrar los iconos soportados por Angular en https://material.io/resou
 
 # Angular Schematic 
 
+Los schematics nos ayudan a hacer páginas más rápido. 
+
 `ng g m admin --routing`
+
+https://material.angular.io/guide/schematics
+
+Tenemos que instalar cdk y material. 
+
+```TS
+ng add @angular/material
+ng add @angular/cdk
+```
+
+En schematics tenemos componentes como: 
+
+- address-form
+
+Para instalar el schematic dentro de nuestro modulo: 
+
+`ng generate @angular/material:address-form admin/components/product-form`
+
+Creamos el modulo, las rutas, y ahora podemos visitar el schematic: 
+
+http://localhost:4200/admin/create
+
+
+
+
+
 
