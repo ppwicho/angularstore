@@ -7,8 +7,8 @@
         <img mat-card-image [src]="product.image" alt="">
     </div>
     <mat-card-content>{{product.description | slice:0:10}}</mat-card-content>
-    <mat-card-actions>
-        <a [routerLink]="['/products',product.id]">Ver detalle</a>
-        <button  mat-raised-button (click)="addCart()">Agregar al carrito</button>
+    <mat-card-actions class="">
+        <button mat-raised-button [routerLink]="['/products',product.id]">Ver detalle</button>
+        <button  mat-raised-button color="primary" (click)="addCart()">Agregar al carrito</button>
     </mat-card-actions>
 </mat-card>
