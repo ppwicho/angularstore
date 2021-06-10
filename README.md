@@ -812,3 +812,7 @@ http://flexboxgrid.com/
 
 Podemos encontrar los iconos soportados por Angular en https://material.io/resources 
 
+# Angular Schematic 
+
+`ng g m admin --routing`
+
