@@ -867,3 +867,10 @@ Se utilizan para guardar variables que pueden ser modificadas con el tiempo o qu
 Tenemos en la carpeta de environments dos archivos, uno de producción y otro de desarrollo. 
 
 Aqui guardaremos la URL del API 
+
+# ReactiveFormsModule
+
+Nos permiten tener formularios reactivos, para controlar el DOM. 
+
+Un ejemplo se encuentra en el footer.component.ts 
+
