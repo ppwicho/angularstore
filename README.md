@@ -870,7 +870,59 @@ Aqui guardaremos la URL del API
 
 # ReactiveFormsModule
 
-Nos permiten tener formularios reactivos, para controlar el DOM. 
+Los formularios reactivos ayudan a manejar entradas de formulario cuyos valores cambian con un enfoque explícito e inmutable para administrar el estado de un formulario en un momento dado.
 
-Un ejemplo se encuentra en el footer.component.ts 
+Los formularios reactivos difieren de los formularios basadas en plantillas en los siguientes puntos.
 
+- Las formas reactivas son predecibles al ser síncronas con el modelo de datos
+
+- Son inmutables, por lo tanto cada cambio en el estado del formulario devuelve un nuevo estado,
+
+- seguimiento de cambios a través de streams observables.
+
+- Proporcionan una ruta directa a las pruebas porque tiene la seguridad de que sus datos son consistentes y predecibles cuando se solicitan.
+
+- Cualquier consumidor de los streams tiene acceso para manipular estos datos de manera segura
+
+- Se construyen alrededor de observable streams
+
+Además proveen métodos más sencillos para:
+
+- La validación de datos
+- Realización de pruebas unitarias: porque tienes la seguridad de que sus datos son consistentes y predecibles al momento de solicitarlos.
+- Tener lógicas más complejas
+
+## FormControl
+
+Un input de tipo FormControl permite la anidación de validadores (ValidatorFn) con los que podemos de manera sencilla validar la fuente de datos.
+
+```TS
+FormControl(
+  formState?: any, 
+  validatorOrOpts?: ValidatorFn | ValidatorFn[] | AbstractControlOptions, 
+  asyncValidator?: AsyncValidatorFn | AsyncValidatorFn[]
+): FormControl
+```
+Se definen detro de una variable de tipo FormControl() y se pueden llamar en el template:
+
+```TS
+// component.component.ts
+export class Component implements OnInit {
+  emailField: FormControl;
+  constructor() {
+    this.emailField =  new FormControl('', [
+      Validators.required,
+      Validators.maxLength(50),
+      Validators.minLength(4),
+      Validators.email,
+      Validators.pattern(/^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,6}$/)
+    ]);
+  }
+}
+```
+
+```HTML
+<!-- component.component.html -->
+<input type="email" [formControl]="emailField">
+{{ emailField.valid }} <!-- Imprime true o false si el input es válido -->
+ ```
