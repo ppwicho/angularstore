@@ -35,8 +35,37 @@ export class ProductDetailComponent implements OnInit {
     .subscribe(product => {
       console.log(product);
       this.product=product;
-    })
+    });
+  }
 
+  createProduct(){
+    const newProduct : Product = {
+      id:'222',
+      title: 'Camiseta 25',
+      image: 'assets/images/camiseta.png',
+      price: 3000,
+      description: 'La mejor camiseta del mundo mundial'
+    }
+    this.productService.createProduct(newProduct)
+    .subscribe(product => {
+      console.log(product);
+    });
+  }
+  updateProduct(){
+    const newProduct : Partial<Product> = {
+      price: 3000,
+      description: 'La mejor camiseta del mundo mundial'
+    }
+    this.productService.updateProduct('2',newProduct)
+    .subscribe(product => {
+      console.log(product);
+    });
+  }
+  deleteProduct(){
+    this.productService.deleteProduct('222')
+    .subscribe(rta => {
+      console.log(rta);
+    });
   }
 
 }
