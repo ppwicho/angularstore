@@ -12,15 +12,23 @@ import { LayoutModule } from '@angular/cdk/layout';
 import { ProductsListComponent } from './components/products-list/products-list.component';
 import { DashboardComponent } from './components/dashboard/dashboard.component';
 import { InventarioComponent } from './components/inventario/inventario.component';
+import { OrderListComponent } from './components/order-list/order-list.component';
+import { MatTableModule } from '@angular/material/table';
+import { MatPaginatorModule } from '@angular/material/paginator';
+import { MatSortModule } from '@angular/material/sort';
+import { FormProductComponent } from './components/form-product/form-product.component';
 
 @NgModule({
-  declarations: [ProductFormComponent, NavComponent, DashboardComponent, InventarioComponent, ProductsListComponent],
+  declarations: [ProductFormComponent, NavComponent, DashboardComponent, InventarioComponent, ProductsListComponent, OrderListComponent, FormProductComponent],
   imports: [
     CommonModule,
     AdminRoutingModule,
     MaterialModule,
     ReactiveFormsModule,
     LayoutModule,
+    MatTableModule,
+    MatPaginatorModule,
+    MatSortModule,
   ]
 })
 export class AdminModule { }
