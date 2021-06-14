@@ -17,9 +17,10 @@ import { MatTableModule } from '@angular/material/table';
 import { MatPaginatorModule } from '@angular/material/paginator';
 import { MatSortModule } from '@angular/material/sort';
 import { FormProductComponent } from './components/form-product/form-product.component';
+import { ProductEditComponent } from './components/product-edit/product-edit.component';
 
 @NgModule({
-  declarations: [ProductFormComponent, NavComponent, DashboardComponent, InventarioComponent, ProductsListComponent, OrderListComponent, FormProductComponent],
+  declarations: [ProductFormComponent, NavComponent, DashboardComponent, InventarioComponent, ProductsListComponent, OrderListComponent, FormProductComponent, ProductEditComponent],
   imports: [
     CommonModule,
     AdminRoutingModule,
