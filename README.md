@@ -926,3 +926,5 @@ export class Component implements OnInit {
 <input type="email" [formControl]="emailField">
 {{ emailField.valid }} <!-- Imprime true o false si el input es válido -->
  ```
+
+ 
