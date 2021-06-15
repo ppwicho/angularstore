@@ -931,3 +931,7 @@ export class Component implements OnInit {
 
  Ocupamos la libreria `angular angularfire2` de github 
  
+
+ https://github.com/angular/angularfire
+
+ 
