@@ -3,6 +3,7 @@ import { CartService } from 'src/app/core/services/cart.service';
 
 // Importamos el Pipe map 
 import { map } from 'rxjs/operators';
+import { Observable } from 'rxjs';
 
 @Component({
   selector: 'app-header',
@@ -10,17 +11,14 @@ import { map } from 'rxjs/operators';
   styleUrls: ['./header.component.scss']
 })
 export class HeaderComponent implements OnInit {
-  total = 0;
+  total$ : Observable<number>;
   constructor(
     private cartService : CartService
   ) { 
-    this.cartService.cart$
+    this.total$ = this.cartService.cart$
     .pipe(
       map(products => products.length)
     )
-    .subscribe(total => {
-      this.total =  total;
-    });
   }
 
   ngOnInit(): void {
