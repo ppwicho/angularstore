@@ -927,4 +927,7 @@ export class Component implements OnInit {
 {{ emailField.valid }} <!-- Imprime true o false si el input es válido -->
  ```
 
+ # Firebase 
+
+ Ocupamos la libreria `angular angularfire2` de github 
  
