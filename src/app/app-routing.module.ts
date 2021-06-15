@@ -1,7 +1,7 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes , PreloadAllModules } from '@angular/router';
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
-import {LayoutComponent} from './layout/layout.component'
+import { LayoutComponent } from './layout/layout.component'
 import { AdminGuard } from './admin.guard'
 
 
@@ -37,7 +37,11 @@ const routes: Routes = [
       {
         path:'order',
         loadChildren: () => import('./order/order.module').then(m=>m.OrderModule)  
-      }
+      },
+      {
+        path: 'auth',
+        loadChildren: () => import('./auth/auth.module').then(m=>m.AuthModule)  
+      },
     ]
   },
   {
