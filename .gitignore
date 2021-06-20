@@ -51,3 +51,4 @@ Thumbs.db
 .gitsecret/keys/random_seed
 environment.ts
 environment.prod.ts
+environment.stag.ts
