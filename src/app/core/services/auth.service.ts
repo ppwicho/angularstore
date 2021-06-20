@@ -10,6 +10,6 @@ export class AuthService {
     private af : AngularFireAuth
   ) { }
   createUser(email: string, password: string){
-    return this.af.createUserWithEmailAndPassword(email,password)
+    return this.af.createUserWithEmailAndPassword(email,password);
   }
 }
