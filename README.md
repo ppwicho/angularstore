@@ -935,3 +935,47 @@ export class Component implements OnInit {
  https://github.com/angular/angularfire
 
  
+## Git-secret 
+
+Para no dejar expuesta el API key en el repositorio, inicalizamos un git secret en nuestra carpeta. 
+
+Generamos un gpg 
+
+`gpg --gen-key`
+
+Una vez generada la clave de encriptación inicializamos 
+
+`git secret init`
+
+Como tenemos ya generado el repo tenemos que borrar el cache 
+
+`git rm -r --cached .`
+
+Agregar los archivos que se van a encriptar a nuestro .gitignore
+
+`echo environment.prod.ts >> .gitignore`
+`echo environment.ts >> .gitignore`
+
+Generar de nuevo el tree de git
+
+`git add .`
+
+Agregar los archivos al secret 
+
+`git secret add <filenames...>`
+
+Generar los <filenames>.secret 
+
+`git secret hide`
+
+Cuando descargues el repo desencripta con
+
+`git secret reveal`
+
+Para imprimir el contenido 
+
+`git secret cat`
+
+
+
+
