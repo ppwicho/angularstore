@@ -976,6 +976,12 @@ Para imprimir el contenido
 
 `git secret cat`
 
+```s 
+ 2000  firebase init
+ 2001  git firebase init
+ 2002  npm install -g firebase-tools
+ 2003  firebase init 
+ 2004  ng build --prod
+ 2005  firebase deploy
 
-
-
+```
