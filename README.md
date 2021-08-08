@@ -985,3 +985,89 @@ Para imprimir el contenido
  2005  firebase deploy
 
 ```
+
+# Differential loading 
+
+Los navegadores viejitos para soportar todas las funciones nuevas de angular que no están implementadas en el navegador, corre polyfills. 
+
+# Dynamic imports 
+
+Dynamic import: es la forma nativa en la que precarga Javascript de forma nativa los módulos.
+
+Podemos modificar el `app-routing.module.ts` para que Java Script cargue nativamente los modulos, es practicamente lo que hemos hecho, pero el dinamismo puede pasar variables.  No obstante perdemos la lectura del código y paquetes pueden perder optimizaciones automáticas al pasarlo a tiempos de ejecución. 
+
+# CLI Builders 
+
+# Patrón LIFT (Locale, Identify, Flat and Try Dry) y Naming
+
+## Locate 
+
+Debemos poder localizar rapidamente un componente o un problema. 
+
+No dividir solo en componentes y directivas. 
+
+Dividir por caracteristicas. 
+
+- About US
+- Contact 
+- Header 
+- Footer 
+
+La guia oficial de Angular y sus reglas estan en las `style guies` de angular en angular.io 
+
+Hay que tener instaladas en el VSCODE
+
+- Lenguage Service 
+- TS Lint 
+
+## Identify 
+
+Hay que identificar poniendo apellidos al archivo. 
+
+- header.directive.ts
+- header.module.ts 
+- header.pipe.ts 
+
+etc. 
+
+## FLAT 
+
+Solo dos niveles de carpetas, máximo 7 carpetas. 
+
+## TRY DRY 
+
+No repetirse. 
+
+# Smart and Dumb components
+
+Components = Renderizar (Inputs, Outputs)
+Containers = Fetch (buscan datos) y mandan a renderizar en los componentes
+
+# Redux 
+
+Cuando la aplicación empieza a mutar se recomienda utilzar el patrón Redux y sus librerias: 
+
+- NGRX 
+- Akita 
+
+# Short imports con Typescript
+
+- Se compilan en tsconfig.json 
+```JS
+   "paths": {
+     "@core/*": ["app/core/*"],
+     "@material/*": ["app/material/*"],
+     "@shared/*": ["app/shared/*"]
+```
+
+Ahora en los archios utilizaremos un import reducido 
+
+`import { Products } from ''@core/services/products/products.service`
+
+Por lo general todo lo modularizdo se coloca como Short Input.
+
+
+
+
+
+
